@@ -1,0 +1,140 @@
+@logo-size-w: 388px;
+@logo-size-h: 516px;
+
+.transition(...) {
+  @props: ~`"@{arguments}".replace(/[\[\]]/g, '')`;
+  -webkit-transition: @props;
+  -moz-transition: @props;
+  -o-transition: @props;
+  transition: @props;
+}
+
+
+html, body {
+  font-family: 'PT Sans Narrow';
+  color: #555;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: #1B718B;
+}
+.container {
+  height: 100%;
+  width: 100%;
+  .transition(margin 700ms);
+
+
+  .navigation {
+    display: block;
+    padding: 5px 15px;
+    background-color: #333;
+  }
+
+  .slide{
+    background-attachment: fixed;
+    width:100%;
+    height:100%;
+    position: relative;
+    box-shadow: inset 0px 10px 10px rgba(0,0,0,0.3);
+
+    .nav-slide {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      background-color: #fff;
+      padding: 4px 0;
+      border-radius: 7px;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      color: #000;
+      cursor: pointer;
+      box-shadow: 0 4px 10px #333;
+      text-align: center;
+      width: 80px;
+      margin-left: -40px;
+
+      &.nav-prev {
+        bottom: auto;
+        top: 0;
+        border-radius: 7px;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+      }
+    }
+
+    section {
+      article {
+        header {
+          h2 {
+            margin: 0;
+            padding: 20px;
+          }
+        }
+      }
+    }
+
+    &.slide1 {
+      @logo-position-x: 50%;
+      @logo-position-y: 50%;
+      @logo-perc: .5;
+
+      @logo-w: @logo-size-w * @logo-perc;
+      @logo-h: @logo-size-h * @logo-perc;
+
+      background-color: red;
+      background-image:url(../images/ny1.jpg);
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+
+      .logo-sprite {
+        position: absolute;
+        top: @logo-position-y;
+        left: @logo-position-x;
+        margin-left: (@logo-w/2)*-1;
+        margin-top: (@logo-h/2)*-1;
+        width: @logo-w;
+        height: @logo-h;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      h1 {
+        position: absolute;
+        top: @logo-position-y;
+        left: @logo-position-x;
+        margin-left: -200px;
+        width: 400px;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 300;
+        color: #fff;
+        margin-top: (@logo-h/2) + 10;
+        text-shadow: 0 0 7px #000;
+      }
+    }
+
+    &.slide2 {
+      background-color: #259fc3;
+    }
+
+    &.slide3 {
+      background-color: #c11a20;
+    }
+
+    &.slide4 {
+      background-color: #d69b32;
+    }
+
+    &.slide5 {
+      background-color: #81c55a;
+    }
+  }
+}

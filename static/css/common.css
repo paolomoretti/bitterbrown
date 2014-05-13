@@ -1,0 +1,105 @@
+html,
+body {
+  font-family: 'PT Sans Narrow';
+  color: #555;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: #1B718B;
+}
+.container {
+  height: 100%;
+  width: 100%;
+  -webkit-transition: margin, 700ms;
+  -moz-transition: margin, 700ms;
+  -o-transition: margin, 700ms;
+  transition: margin, 700ms;
+}
+.container .navigation {
+  display: block;
+  padding: 5px 15px;
+  background-color: #333;
+}
+.container .slide {
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-shadow: inset 0px 10px 10px rgba(0, 0, 0, 0.3);
+}
+.container .slide .nav-slide {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  background-color: #fff;
+  padding: 4px 0;
+  border-radius: 7px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  color: #000;
+  cursor: pointer;
+  box-shadow: 0 4px 10px #333;
+  text-align: center;
+  width: 80px;
+  margin-left: -40px;
+}
+.container .slide .nav-slide.nav-prev {
+  bottom: auto;
+  top: 0;
+  border-radius: 7px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.container .slide section article header h2 {
+  margin: 0;
+  padding: 20px;
+}
+.container .slide.slide1 {
+  background-color: red;
+  background-image: url(../images/ny1.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.container .slide.slide1 .logo-sprite {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -97px;
+  margin-top: -129px;
+  width: 194px;
+  height: 258px;
+}
+.container .slide.slide1 .logo-sprite img {
+  width: 100%;
+  height: 100%;
+}
+.container .slide.slide1 h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -200px;
+  width: 400px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: #fff;
+  margin-top: 139px;
+  text-shadow: 0 0 7px #000;
+}
+.container .slide.slide2 {
+  background-color: #259fc3;
+}
+.container .slide.slide3 {
+  background-color: #c11a20;
+}
+.container .slide.slide4 {
+  background-color: #d69b32;
+}
+.container .slide.slide5 {
+  background-color: #81c55a;
+}
