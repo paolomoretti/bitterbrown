@@ -1,5 +1,11 @@
-<?
-$conn = mysql_connect ("localhost", "prolific", "!raz00prolific") or die ("Could not connect to database");
-mysql_select_db ("prolific") or die ("non trovo il database");
+<?php
+$con=mysqli_connect("localhost","prolific","!raz00prolific","prolific");
+// Check connection
+if (mysqli_connect_errno()) {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
 
-var_dump($conn);
+mysqli_query($con,"update counter set `usage` = `usage` + 1");
+
+mysqli_close($con);
+?>
