@@ -7,5 +7,11 @@ if (mysqli_connect_errno()) {
 
 mysqli_query($con,"update counter set `usage` = `usage` + 1");
 
+$result = mysqli_query($con,"SELECT `usage` FROM counter where `id` = 1");
+
+while($row = mysqli_fetch_array($result)) {
+  echo $row['usage'];
+}
+
 mysqli_close($con);
 ?>
