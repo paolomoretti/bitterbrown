@@ -1,4 +1,8 @@
 <?php
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, OPTIONS');
+header('Content-type: application/json');
+
 $con=mysqli_connect("localhost","prolific","!raz00prolific","prolific");
 // Check connection
 if (mysqli_connect_errno()) {
