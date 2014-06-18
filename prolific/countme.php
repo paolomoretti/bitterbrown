@@ -8,8 +8,8 @@ $con=mysqli_connect("localhost","prolific","!raz00prolific","prolific");
 if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
-
-mysqli_query($con,"update counter set `usage` = `usage` + 1");
+if (!isset($_REQUEST['getcount']))
+  mysqli_query($con,"update counter set `usage` = `usage` + 1");
 
 $result = mysqli_query($con,"SELECT `usage` FROM counter where `id` = 1");
 
