@@ -1,0 +1,149 @@
+@color-green: #00b597;
+@color-blue: #2d2f3d;
+@color-body-bg: #c9c8c8;
+@color-brick: #f26e5e;
+@color-black: #2a2a2a;
+
+@side-padding: 120px;
+
+@font-face {
+  font-family: Mohave;
+  src: url(Mohave-Bold.otf);
+}
+
+.transition(...) {
+  @props: ~`"@{arguments}".replace(/[\[\]]/g, '')`;
+  -webkit-transition: @props;
+  -moz-transition: @props;
+  -o-transition: @props;
+  transition: @props;
+}
+
+
+body {
+  margin: 0;
+  padding: 0 0 100px 0;
+  background-color: @color-body-bg;
+
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-top: 8px solid @color-green;
+    background-color: @color-blue;
+    padding: 25px 25px 0 25px;
+
+    .logo {
+      display: inline-block;
+      width: 209px;
+      height: 70px;
+      background: url(logo.png) no-repeat left top;
+      margin-bottom: -13px;
+
+      span {
+        display: none;
+      }
+    }
+  }
+
+  .intro {
+    border-top: 130px solid @color-blue;
+    padding: 70px @side-padding;
+    text-align: center;
+    background-color: @color-brick;
+
+    h2 {
+      font-size: 49px;
+      font-family: 'Mohave';
+      color: @color-black;
+      margin: 0 0 45px 0;
+    }
+    h3 {
+      font-size: 22px;
+      font-family: 'PT Sans';
+      font-weight: 300;
+      color: @color-black;
+      margin: 0;
+    }
+  }
+
+  .content {
+    padding: 25px @side-padding;
+
+    h4 {
+      color: @color-black;
+      font-size: 25px;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-family: 'PT Sans';
+      margin: 10px 0;
+    }
+    h5 {
+      color: @color-black;
+      font-size: 20px;
+      font-weight: 400;
+      font-family: 'PT Sans';
+      margin: 10px 0 0 0;
+
+      &.code-label {
+        background-color: @color-brick;
+        font-size: 15px;
+        margin: 0 0 -14px 0;
+        padding: 2px 8px;
+        display: inline-block;
+      }
+    }
+    pre {
+      margin: 2px 0;
+    }
+    p {
+      color: @color-black;
+      font-size: 18px;
+      font-weight: 300;
+      font-family: 'PT Sans';
+      margin: 0 0 45px 0;
+    }
+  }
+
+}
+
+.splitter {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  > div {
+    box-sizing: border-box;
+    float: left;
+    width: 50%;
+
+    &:first-child {
+      padding-right: 5px;
+    }
+    &:last-child {
+      padding-left: 5px;
+    }
+  }
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: @color-green;
+  color: @color-black;
+  font-size: 22px;
+  border: 0;
+  border-bottom: 5px solid darken(@color-green, 10);
+  font-family: 'Mohave';
+  text-decoration: none;
+
+  &:hover {
+    .transition(all 200ms);
+    background-color: @color-brick;
+    color: #fff;
+    border-bottom-color: darken(@color-brick, 10);
+  }
+}

@@ -2,7 +2,7 @@
 $(document).ready(function() {
   window.slideHeight = $(window).height();
   window.activeSlide = 0;
-  $(window).stellar({
+  $(".container").stellar({
     positionProperty: 'transform',
     hideDistantElements: false
   });
