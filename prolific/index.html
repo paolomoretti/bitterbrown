@@ -16,6 +16,7 @@
     <a href="/prolific/" class="logo">
         <span>Prolific</span>
     </a>
+    <span class="counter">0</span>
 </div>
 
 <section class="intro">
@@ -89,7 +90,7 @@ describe "Jasmine classic VS Prolific library", ->
 
 <script type="text/coffeescript">
 $.get "http://www.bitterbrown.com/prolific/countme.php?getcount", (count)->
-    alert count
+    $(".counter").html "Used in #{count} test suites"
 </script>
 
 </body>

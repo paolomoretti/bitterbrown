@@ -26,6 +26,13 @@ body .header .logo {
 body .header .logo span {
   display: none;
 }
+body .header .counter {
+  color: #fff;
+  position: fixed;
+  top: 69px;
+  right: 30px;
+  font-family: 'Mohave';
+}
 body .intro {
   border-top: 130px solid #2d2f3d;
   padding: 70px 120px;
