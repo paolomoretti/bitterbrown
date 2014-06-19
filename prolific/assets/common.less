@@ -25,6 +25,14 @@ body {
   padding: 0 0 100px 0;
   background-color: @color-body-bg;
 
+  a {
+    color: darken(@color-green, 10);
+
+    &:hover {
+      color: darken(@color-brick, 10);
+    }
+  }
+
   .header {
     position: fixed;
     top: 0;
@@ -61,13 +69,13 @@ body {
     background-color: @color-brick;
 
     h2 {
-      font-size: 49px;
+      font-size: 3em;
       font-family: 'Mohave';
       color: @color-black;
       margin: 0 0 45px 0;
     }
     h3 {
-      font-size: 22px;
+      font-size: 1.3em;
       font-family: 'PT Sans';
       font-weight: 300;
       color: @color-black;
@@ -80,7 +88,7 @@ body {
 
     h4 {
       color: @color-black;
-      font-size: 25px;
+      font-size: 1.55em;
       text-transform: uppercase;
       font-weight: 700;
       font-family: 'PT Sans';
@@ -88,7 +96,7 @@ body {
     }
     h5 {
       color: @color-black;
-      font-size: 20px;
+      font-size: 1.1em;
       font-weight: 400;
       font-family: 'PT Sans';
       margin: 10px 0 0 0;
@@ -152,5 +160,56 @@ body {
     background-color: @color-brick;
     color: #fff;
     border-bottom-color: darken(@color-brick, 10);
+  }
+}
+
+
+
+@media (max-width: 700px) {
+  body {
+
+    .intro {
+      padding-right: 40px;
+      padding-left: 40px;
+    }
+    .content {
+      padding: 25px 40px;
+
+      pre {
+        width: 100%;
+        overflow: auto;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    .header {
+      .counter {
+        font-size: 13px;
+        top: 20px;
+        right: 11px;
+      }
+    }
+    .intro {
+      padding: 20px;
+      font-size: .8em;
+
+      h2 {
+        margin-bottom: 25px;
+      }
+    }
+    .content {
+      padding: 20px;
+      font-size: .8em;
+
+      pre {
+        width: 100%;
+        overflow: auto;
+        box-sizing: border-box;
+      }
+    }
   }
 }
