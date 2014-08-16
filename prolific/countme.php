@@ -10,6 +10,8 @@ if (mysqli_connect_errno()) {
 }
 if (!isset($_REQUEST['getcount']))
   mysqli_query($con,"update counter set `usage` = `usage` + 1");
+else
+  var_dump($_SERVER["HTTP_REFERER"]);
 
 $result = mysqli_query($con,"SELECT `usage` FROM counter where `id` = 1");
 
